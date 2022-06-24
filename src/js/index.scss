@@ -1,0 +1,30 @@
+:root{
+  --bg-default: #000;
+}
+
+*{
+  color: #fff;
+}
+
+.logo{
+  width: 13em;
+  height: auto;
+}
+
+.logo-container{
+  padding-top: 1em;
+  padding-left: 1em;
+}
+
+.main-container{
+  background-color: var(--bg-default);
+  height: 100vh;
+}
+
+html, body{
+  margin:  0;
+}
+
+.test{
+  background-color: cyan;
+}
