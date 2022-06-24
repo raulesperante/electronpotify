@@ -1,5 +1,6 @@
 :root{
   --bg-default: #000;
+  --bg-listItem: #808080; 
 }
 
 *{
@@ -10,6 +11,19 @@
   width: 13em;
   height: auto;
 }
+
+.listItem span{
+  font-size: 1.3em;
+}
+
+.listItem:hover{ 
+  background-color: var(--bg-listItem);
+}
+
+.sidebar{
+  margin-top: 2em;
+}
+
 
 .logo-container{
   padding-top: 1em;
