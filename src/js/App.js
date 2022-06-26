@@ -39,7 +39,7 @@ export default function App() {
                                     <ListItemIcon>
                                         <SearchIcon fontSize="large" />
                                     </ListItemIcon>
-                                    <ListItemText primary="Search"  />
+                                    <ListItemText primary="Search" />
                                 </ListItemButton>
                             </ListItem>
                         </Grid>
@@ -57,7 +57,19 @@ export default function App() {
 
                 </Grid>
             </Grid>
-            <Grid xs={9}>Col1</Grid>
+            <Grid xs={9}>
+                <div className="mediaplayer__wrapper" style={{ backgroundImage: "url(https://i.imgur.com/sCbrzQa.png)" }}>
+                    <div className="mediaplayer">
+                        <div className="mediaplayer__header">
+                            <div className="mediaplayer__headerName">Hidden</div>
+                            <div className="mediaplayer__headerAuthor">by Miaow</div>
+                        </div>
+                        <div className="mediaplayer__controls">
+                        </div>
+                    </div>
+                </div>
+            </Grid>
+
         </Grid >
 
     </>

@@ -1,44 +1,117 @@
-:root{
+:root {
   --bg-default: #000;
-  --bg-listItem: #808080; 
+  --bg-listItem: #808080;
 }
 
-*{
+* {
   color: #fff;
 }
 
-.logo{
+.logo {
   width: 13em;
   height: auto;
 }
 
-.listItem span{
+.listItem span {
   font-size: 1.3em;
 }
 
-.listItem:hover{ 
+.listItem:hover {
   background-color: var(--bg-listItem);
 }
 
-.sidebar{
+.sidebar {
   margin-top: 2em;
 }
 
 
-.logo-container{
+.logo-container {
   padding-top: 1em;
   padding-left: 1em;
 }
 
-.main-container{
+.main-container {
   background-color: var(--bg-default);
   height: 100vh;
 }
 
-html, body{
-  margin:  0;
+html,
+body {
+  margin: 0;
 }
 
-.test{
+.mediaplayer__wrapper {
+  height: 18em;
+  width: 18em;
+  border-radius: 15px;
+}
+
+
+
+.mediaplayer {
+  backdrop-filter: blur(2px);
+  height: 18em;
+  width: 18em;
+  // font-size: 4em;
+  // background-color: #fff;
+  border-radius: 15px;
+}
+
+.mediaplayer__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 6em;
+  background-color: #000;
+  opacity: 0.8;
+}
+
+.mediaplayer__controls {
+  background-color: #800014;
+  opacity: 0.7;
+  height: 12em;
+}
+
+.mediaplayer__headerName {
+  font-size: 2em;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("https://i.imgur.com/sCbrzQa.png");
+
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+.test {
   background-color: cyan;
 }
