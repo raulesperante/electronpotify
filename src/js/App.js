@@ -2,116 +2,29 @@ import React from "react";
 import {
     Grid,
 } from "@mui/material"
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import FastRewindIcon from '@mui/icons-material/FastRewind';
-import FastForwardIcon from '@mui/icons-material/FastForward';
-import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
-import VolumeDown from '@mui/icons-material/VolumeDown';
-import VolumeUp from '@mui/icons-material/VolumeUp';
-import HomeIcon from '@mui/icons-material/Home';
-import SearchIcon from '@mui/icons-material/Search';
-import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
+import MediaPlayer from "./componets/mediaPlayer";
+import Sidebar from "./componets/Sidebar";
 import { ASSETS } from "./helpers/constants";
 
 
 export default function App() {
 
-    const [value, setValue] = React.useState(30);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-
-
     return <>
         <Grid container className="main-container">
             <Grid item xs={3}>
-                <Grid className="logo-container"><img className="logo" src={ASSETS.LOGO} /></Grid>
-                <Grid className="sidebar">
-                    <List>
-                        <Grid className="listItem">
-                            <ListItem disablePadding>
-                                <ListItemButton>
-                                    <ListItemIcon>
-                                        <HomeIcon color="white" fontSize="large" />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Home" />
-                                </ListItemButton>
-                            </ListItem>
-                        </Grid>
-                        <Grid className="listItem">
-                            <ListItem disablePadding>
-                                <ListItemButton>
-                                    <ListItemIcon>
-                                        <SearchIcon color="white" fontSize="large" />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Search" />
-                                </ListItemButton>
-                            </ListItem>
-                        </Grid>
-                        <Grid className="listItem">
-                            <ListItem disablePadding>
-                                <ListItemButton>
-                                    <ListItemIcon>
-                                        <LibraryMusicIcon color="white" fontSize="large" />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Library" />
-                                </ListItemButton>
-                            </ListItem>
-                        </Grid>
-                    </List>
-
+                <Grid className="logo-container">
+                    <img className="logo" src={ASSETS.LOGO} />
+                </Grid>
+                <Sidebar />
+            </Grid>
+            <Grid className="presentation" item container xs={9}>
+                <Grid sx={{
+                    width: "100%", 
+                    display: "flex", 
+                    justifyContent: "center"}}>
+                    <MediaPlayer />
                 </Grid>
             </Grid>
-            <Grid item xs={9}>
-                <Box className="mediaplayer__wrapper" style={{ backgroundImage: "url(https://i.imgur.com/sCbrzQa.png)" }}>
-                    <Box className="mediaplayer">
-                        <Box className="mediaplayer__header">
-                            <Box className="mediaplayer__headerName">Hidden</Box>
-                            <Box className="mediaplayer__headerAuthor">by Miaow</Box>
-
-                        </Box>
-                        <Box className="mediaplayer__controls">
-                            <Slider
-                                className="currentTime"
-                                color="orange"
-                                size="small"
-                                defaultValue={70}
-                                aria-label="Small"
-                            />
-                            <Grid>
-                                <Box className="clock">
-                                    00:00
-                                </Box>
-                            </Grid>
-                            <Grid className="mediaplayer__buttons">
-                                <Box>
-                                    <FastRewindIcon color="gray" className="mediaplayer__buttonFast" />
-                                </Box>
-                                <Box>
-                                    <PlayArrowIcon className="mediaplayer__playButton" />
-                                </Box>
-                                <Box>
-                                    <FastForwardIcon color="gray" className="mediaplayer__buttonFast" />
-                                </Box>
-                            </Grid>
-                            <Stack className="volume" spacing={2} direction="row" alignItems="center">
-                                <VolumeDown color="gray" />
-                                <Slider color="orange" aria-label="Volume" value={value} onChange={handleChange} />
-                                <VolumeUp color="gray" />
-                            </Stack>
-                        </Box>
-                    </Box>
-                </Box>
-            </Grid>
-
         </Grid >
 
     </>
