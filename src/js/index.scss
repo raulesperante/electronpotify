@@ -3,9 +3,9 @@
   --bg-listItem: #808080;
 }
 
-* {
-  color: #fff;
-}
+// * {
+//   color: #fff;
+// }
 
 .logo {
   width: 13em;
@@ -14,6 +14,7 @@
 
 .listItem span {
   font-size: 1.3em;
+  color: white;
 }
 
 .listItem:hover {
@@ -61,18 +62,25 @@ body {
   justify-content: center;
   align-items: center;
   height: 6em;
-  background-color: #000;
-  opacity: 0.8;
+  background: rgba(0, 0, 0, .8);  
 }
 
 .mediaplayer__controls {
-  background-color: #800014;
-  opacity: 0.7;
+  background: rgba(128, 0, 20, .7);  
   height: 12em;
 }
 
 .mediaplayer__headerName {
   font-size: 2em;
+}
+
+.mediaplayer__buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.mediaplayer__playButton{
+  font-size: 5em !important;
 }
 
 .volume{

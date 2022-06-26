@@ -7,6 +7,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import FastRewindIcon from '@mui/icons-material/FastRewind';
+import FastForwardIcon from '@mui/icons-material/FastForward';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
@@ -37,7 +40,7 @@ export default function App() {
                             <ListItem disablePadding>
                                 <ListItemButton>
                                     <ListItemIcon>
-                                        <HomeIcon fontSize="large" />
+                                        <HomeIcon color="white" fontSize="large" />
                                     </ListItemIcon>
                                     <ListItemText primary="Home" />
                                 </ListItemButton>
@@ -47,7 +50,7 @@ export default function App() {
                             <ListItem disablePadding>
                                 <ListItemButton>
                                     <ListItemIcon>
-                                        <SearchIcon fontSize="large" />
+                                        <SearchIcon color="white" fontSize="large" />
                                     </ListItemIcon>
                                     <ListItemText primary="Search" />
                                 </ListItemButton>
@@ -57,7 +60,7 @@ export default function App() {
                             <ListItem disablePadding>
                                 <ListItemButton>
                                     <ListItemIcon>
-                                        <LibraryMusicIcon fontSize="large" />
+                                        <LibraryMusicIcon color="white" fontSize="large" />
                                     </ListItemIcon>
                                     <ListItemText primary="Library" />
                                 </ListItemButton>
@@ -82,10 +85,16 @@ export default function App() {
                                 defaultValue={70}
                                 aria-label="Small"
                             />
-                            <Grid>
-                                <Box></Box>
-                                <Box></Box>
-                                <Box></Box>
+                            <Grid className="mediaplayer__buttons">
+                                <Box>
+                                    <FastRewindIcon />
+                                </Box>
+                                <Box>
+                                    <PlayArrowIcon className="mediaplayer__playButton" />
+                                </Box>
+                                <Box>
+                                    <FastForwardIcon />
+                                </Box>
 
                             </Grid>
                             <Stack className="volume" spacing={2} direction="row" alignItems="center">
