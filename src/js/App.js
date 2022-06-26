@@ -46,10 +46,7 @@ export default function App() {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid sx={{
-                    width: "100%", 
-                    display: "flex", 
-                    justifyContent: "center"}}>
+                <Grid className="mediaplayer__container" >
                     <MediaPlayer />
                 </Grid>
             </Grid>
