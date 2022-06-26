@@ -2,6 +2,9 @@
   --bg-default: #000;
   --bg-listItem: #808080;
   --secondary: #808080;
+  --sizeMediaPlayer: 24em;
+  --sizeMediaPlayerHeader: 8em;
+  --sizeMediaPlayerControls: 16em;
 }
 
 .logo {
@@ -39,8 +42,8 @@ body {
 }
 
 .mediaplayer__wrapper {
-  height: 18em;
-  width: 18em;
+  height: var(--sizeMediaPlayer);
+  width: var(--sizeMediaPlayer);
   border-radius: 15px;
 }
 
@@ -48,8 +51,8 @@ body {
 
 .mediaplayer {
   backdrop-filter: blur(2px);
-  height: 18em;
-  width: 18em;
+  height: var(--sizeMediaPlayer);
+  width: var(--sizeMediaPlayer);
   border-radius: 15px;
 }
 
@@ -58,13 +61,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 6em;
+  height: var(--sizeMediaPlayerHeader);
   background: rgba(0, 0, 0, .8);
 }
 
 .mediaplayer__controls {
   background: rgba(128, 0, 20, .7);
-  height: 12em;
+  height: var(--sizeMediaPlayerControls);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
