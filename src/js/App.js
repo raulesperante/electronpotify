@@ -6,6 +6,12 @@ import {
 import MediaPlayer from "./componets/mediaPlayer";
 import Sidebar from "./componets/Sidebar";
 import { ASSETS } from "./helpers/constants";
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
+import DeleteIcon from '@mui/icons-material/Delete';
+import AlarmIcon from '@mui/icons-material/Alarm';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 
 
 export default function App() {
@@ -25,6 +31,11 @@ export default function App() {
                     </Box>
                     <Box className="song-info">
                         <Box className="song-info__text">Pop Inglés HITS</Box>
+                        <Box >
+                            <IconButton aria-label="play">
+                                <PlayCircleIcon color="green" className="song-info__button" />
+                            </IconButton>
+                        </Box>
                     </Box>
                 </Box>
                 {/* <Grid sx={{

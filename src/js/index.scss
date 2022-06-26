@@ -118,9 +118,6 @@ body {
 
 .song-item{
   display: flex;
-  margin-left: 2em;
-  margin-top: 2em;
-
 }
 
 .song-info{
@@ -131,7 +128,13 @@ body {
   border-bottom-right-radius: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
+}
+
+.song-info__button{
+  font-size: 3em !important;
+  
 }
 
 .song-info__text{
