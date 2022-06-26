@@ -68,6 +68,8 @@ body {
 .mediaplayer__controls {
   background: rgba(128, 0, 20, .7);  
   height: 12em;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .mediaplayer__headerName {
@@ -77,10 +79,15 @@ body {
 .mediaplayer__buttons{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .mediaplayer__playButton{
   font-size: 5em !important;
+}
+
+.mediaplayer__buttonFast{
+  font-size: 2em !important;
 }
 
 .volume{

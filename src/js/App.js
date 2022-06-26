@@ -87,13 +87,13 @@ export default function App() {
                             />
                             <Grid className="mediaplayer__buttons">
                                 <Box>
-                                    <FastRewindIcon />
+                                    <FastRewindIcon className="mediaplayer__buttonFast" />
                                 </Box>
                                 <Box>
                                     <PlayArrowIcon className="mediaplayer__playButton" />
                                 </Box>
                                 <Box>
-                                    <FastForwardIcon />
+                                    <FastForwardIcon className="mediaplayer__buttonFast" />
                                 </Box>
 
                             </Grid>
