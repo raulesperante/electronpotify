@@ -2,6 +2,7 @@ import React from "react";
 import {
     Grid,
     Box,
+    duration,
 } from "@mui/material"
 import MediaPlayer from "./componets/mediaPlayer";
 import Sidebar from "./componets/Sidebar";
@@ -43,12 +44,22 @@ const SONGS = {
 
 
 export default function App() {
+    const audio = new Audio(SONGS[1].src)
+
 
     React.useEffect(() => {
-        // const audio = new Audio(SONGS[1].src)
         // audio.play()
+        audio.addEventListener("timeupdate", function () {
+            var currentTime = audio.currentTime;
+            var duration = audio.duration;
+            var calc = currentTime / duration * 100
+            console.log(calc)
+            // console.log(currentTime)
+        });
 
-    }, [])
+
+
+    }, [audio.currentTime])
 
     return <>
         <Grid container className="main-container">
