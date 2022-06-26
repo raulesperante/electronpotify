@@ -71,41 +71,45 @@ export default function App() {
                 </Grid>
             </Grid>
             <Grid item xs={9}>
-                <div className="mediaplayer__wrapper" style={{ backgroundImage: "url(https://i.imgur.com/sCbrzQa.png)" }}>
-                    <div className="mediaplayer">
-                        <div className="mediaplayer__header">
-                            <div className="mediaplayer__headerName">Hidden</div>
-                            <div className="mediaplayer__headerAuthor">by Miaow</div>
+                <Box className="mediaplayer__wrapper" style={{ backgroundImage: "url(https://i.imgur.com/sCbrzQa.png)" }}>
+                    <Box className="mediaplayer">
+                        <Box className="mediaplayer__header">
+                            <Box className="mediaplayer__headerName">Hidden</Box>
+                            <Box className="mediaplayer__headerAuthor">by Miaow</Box>
 
-                        </div>
-                        <div className="mediaplayer__controls">
+                        </Box>
+                        <Box className="mediaplayer__controls">
                             <Slider
-                                sx={{marginTop: "-2em"}}
+                                className="currentTime"
+                                color="orange"
                                 size="small"
                                 defaultValue={70}
                                 aria-label="Small"
                             />
+                            <Grid>
+                                <Box className="clock">
+                                    00:00
+                                </Box>
+                            </Grid>
                             <Grid className="mediaplayer__buttons">
                                 <Box>
-                                    <FastRewindIcon className="mediaplayer__buttonFast" />
+                                    <FastRewindIcon color="gray" className="mediaplayer__buttonFast" />
                                 </Box>
                                 <Box>
                                     <PlayArrowIcon className="mediaplayer__playButton" />
                                 </Box>
                                 <Box>
-                                    <FastForwardIcon className="mediaplayer__buttonFast" />
+                                    <FastForwardIcon color="gray" className="mediaplayer__buttonFast" />
                                 </Box>
-
                             </Grid>
                             <Stack className="volume" spacing={2} direction="row" alignItems="center">
-                                <VolumeDown />
-                                <Slider aria-label="Volume" value={value} onChange={handleChange} />
-                                <VolumeUp />
+                                <VolumeDown color="gray" />
+                                <Slider color="orange" aria-label="Volume" value={value} onChange={handleChange} />
+                                <VolumeUp color="gray" />
                             </Stack>
-
-                        </div>
-                    </div>
-                </div>
+                        </Box>
+                    </Box>
+                </Box>
             </Grid>
 
         </Grid >

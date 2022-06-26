@@ -8,7 +8,15 @@ const theme = createTheme({
         },
         white: {
             main: "#ffffff"
+        },
+        orange: {
+            main: "#ff5a36"
+        },
+        gray:{
+            main: "#808080"
         }
+
+
     },
 });
 

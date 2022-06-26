@@ -1,11 +1,8 @@
 :root {
   --bg-default: #000;
   --bg-listItem: #808080;
+  --secondary: #808080;
 }
-
-// * {
-//   color: #fff;
-// }
 
 .logo {
   width: 13em;
@@ -73,7 +70,14 @@ body {
 }
 
 .mediaplayer__headerName {
+  color: var(--secondary);
   font-size: 2em;
+  opacity: 0.8;
+}
+
+.mediaplayer__headerAuthor {
+  color: var(--secondary);
+  opacity: 0.8;
 }
 
 .mediaplayer__buttons{
@@ -88,11 +92,23 @@ body {
 
 .mediaplayer__buttonFast{
   font-size: 2em !important;
+  opacity: 0.6;
 }
 
 .volume{
   margin-left: 2em;
   margin-right: 2em;
+}
+
+.currentTime{
+  margin-top: -2em;
+}
+
+.clock{
+  color: var(--secondary);
+  opacity: 0.6;
+  font-size: 3em;
+  text-align: center;
 }
 
 .test {
