@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector, useDispatch } from 'react-redux'
 import {
     Grid,
     Box,
@@ -7,61 +8,27 @@ import {
 import MediaPlayer from "./componets/mediaPlayer";
 import Sidebar from "./componets/Sidebar";
 import SongItem from "./componets/SongItem";
-import { ASSETS } from "./helpers/constants";
+import { ASSETS, SONGS } from "./helpers/constants";
 
-const SONGS = {
-    1: {
-        author: "Author",
-        title: "Title",
-        src: "src/js/assets/audios/3_am_West_End.mp3"
-    },
-    2: {
-        author: "Author",
-        title: "Title",
-        src: "src/js/assets/audios/Backbeat.mp3"
-    },
-    3: {
-        author: "Author",
-        title: "Title",
-        src: "src/js/assets/audios/Bit_Bit_Loop.mp3"
-    },
-    4: {
-        author: "Author",
-        title: "Title",
-        src: "src/js/assets/audios/Chronos.mp3"
-    },
-    5: {
-        author: "Author",
-        title: "Title",
-        src: "src/js/assets/audios/Hippety_Hop.mp3"
-    },
-    6: {
-        author: "Author",
-        title: "Title",
-        src: "src/js/assets/audios/Meditating_Beat.mp3"
-    },
-}
 
 
 export default function App() {
-    const audio = new Audio(SONGS[1].src)
-
+    const song = useSelector(state => state.changeSong.src)
+    const audioRef = React.useRef(null)
 
     React.useEffect(() => {
-        // audio.play()
-        audio.addEventListener("timeupdate", function () {
-            var currentTime = audio.currentTime;
-            var duration = audio.duration;
-            var calc = currentTime / duration * 100
-            console.log(calc)
-            // console.log(currentTime)
-        });
-
-
-
-    }, [audio.currentTime])
+        if (Boolean(song)) {
+            const audio = audioRef.current || false
+            if(audio){
+                audio.src = song
+                audio.play()
+            }
+        }
+    }, [song])
 
     return <>
+        <audio style={{display:"none"}} ref={audioRef}  src="" controls="controls"></audio>
+
         <Grid container className="main-container">
             <Grid item xs={2}>
                 <Grid className="logo-container">
@@ -73,26 +40,26 @@ export default function App() {
                 <Grid container item className="firstItems">
                     <Grid item container xs={12}>
                         <Grid item xs={4}>
-                            <SongItem />
+                            <SongItem song={SONGS[1]} />
                         </Grid>
                         <Grid item xs={4}>
-                            <SongItem />
+                            <SongItem song={SONGS[2]} />
                         </Grid>
                         <Grid item xs={4}>
-                            <SongItem />
+                            <SongItem song={SONGS[3]} />
                         </Grid>
                     </Grid>
                 </Grid>
                 <Grid container item className="secondItems">
                     <Grid item container xs={12}>
                         <Grid item xs={4}>
-                            <SongItem />
+                            <SongItem song={SONGS[4]} />
                         </Grid>
                         <Grid item xs={4}>
-                            <SongItem />
+                            <SongItem song={SONGS[5]} />
                         </Grid>
                         <Grid item xs={4}>
-                            <SongItem />
+                            <SongItem song={SONGS[6]} />
                         </Grid>
                     </Grid>
                 </Grid>

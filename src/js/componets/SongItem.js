@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch, useSelector } from 'react-redux'
+import { changeSong, changeId } from "../redux/features/changeSong";
 import {
     Box,
 } from "@mui/material"
@@ -8,8 +10,19 @@ import PauseCircleIcon from '@mui/icons-material/PauseCircle';
 
 
 
-export default function SongItem() {
-    const [bnbPlay, setBnbPlay] = React.useState(true)
+export default function SongItem({ song }) {
+    const id = useSelector(state => state.changeSong.id)
+    const dispatch = useDispatch()
+
+
+    const handleChange = () => {
+        dispatch(changeSong(song.src))
+        dispatch(changeId(song.id))
+    }
+
+    const showBtnPause = () => song.id === id
+
+
     return (
         <Box className="song-item">
             <Box>
@@ -19,12 +32,12 @@ export default function SongItem() {
                 <Box className="song-info__text">Pop Inglés HITS</Box>
                 <Box >
                     <IconButton
-                        onClick={() => setBnbPlay(flag => !flag)}
+                        onClick={handleChange}
                         aria-label="play">
-                        {bnbPlay ?
-                            <PlayCircleIcon color="green" className="song-info__button" />
-                            :
+                        {showBtnPause() ?
                             <PauseCircleIcon color="green" className="song-info__button" />
+                            :
+                            <PlayCircleIcon color="green" className="song-info__button" />
                         }
                     </IconButton>
                 </Box>
